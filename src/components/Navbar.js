@@ -1,15 +1,16 @@
 import { useState, useRef, useEffect } from "react";
 import { FaAlignLeft, FaLinkedin, FaGithub } from "react-icons/fa";
-
+import { usePortfolioContext } from "../context/portfolioContext";
 import styled from "styled-components";
 import Sarun from "../assets/Sarun.png";
 import { Link } from "react-router-dom";
 const Navbar = () => {
-  const [showSidebar, setShowSiderbar] = useState(true);
+  const { openSidebar } = usePortfolioContext();
+
   return (
     <Wrapper>
       <div className="nav-center">
-        <button className="toggle-btn">
+        <button className="toggle-btn" onClick={openSidebar}>
           <FaAlignLeft />
         </button>
         <div>
