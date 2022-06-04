@@ -1,6 +1,8 @@
 *,
 ::after,
 ::before {
+  margin:0;
+  padding:0;
   box-sizing: border-box;
 }
 
@@ -43,7 +45,7 @@ html {
   --green-light: #d1e7dd;
   --green-dark: #0f5132;
   --my-blue:#001b9f;
-  --my-yellow:
+  --my-yellow:#FAFA33;
 
   /* fonts  */
   --headingFont: 'Poppins', Sans-Serif;
@@ -158,7 +160,8 @@ ul {
   box-shadow: var(--shadow-2);
   transition: var(--transition);
   text-transform: capitalize;
-  display: inline-block;
+  display:inline-block;
+  width:13rem;
 }
 .btn:hover {
   background: var(--primary-700);

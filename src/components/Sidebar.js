@@ -6,7 +6,7 @@ import { usePortfolioContext } from "../context/portfolioContext";
 import styled from "styled-components";
 const Sidebar = () => {
   const { isSidebarOpen, closeSidebar } = usePortfolioContext();
-  console.log(closeSidebar);
+
   return (
     <Wrapper>
       <aside

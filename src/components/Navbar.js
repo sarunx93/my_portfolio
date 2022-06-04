@@ -26,12 +26,20 @@ const Navbar = () => {
         </div>
         <ul className="social-icons">
           <li>
-            <a href="https://www.linkedin.com/in/sarun-p/" className="socials">
+            <a
+              href="https://www.linkedin.com/in/sarun-p/"
+              className="socials"
+              target="_blank"
+            >
               <FaLinkedin />
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/in/sarun-p/" className="socials">
+            <a
+              href="https://www.linkedin.com/in/sarun-p/"
+              className="socials"
+              target="_blank"
+            >
               <FaGithub />
             </a>
           </li>
