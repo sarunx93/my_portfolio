@@ -1,0 +1,34 @@
+[
+  {
+    "title": "front-end development",
+    "order": "1",
+    "skillList": ["HTML", "CSS", "JavaScript", "React", "Redux Toolkit"],
+    "description": [
+      "Integrate multiple front-end development tools and languages to build a handy front-end application.",
+      "Proficient in modern web development using React and state management tools such as Redux Toolkit.",
+      "Be able to incorporate front-end skills into a MERN project."
+    ]
+  },
+  {
+    "title": "back-end development",
+    "order": "2",
+    "skillList": ["MongoDB", "Mongoose", "NodeJS", "Express", "Postman"],
+    "description": [
+      "Be able to build a MongoDB database for using in applications.",
+      "Construct a server along with an API to allow a communication between a server and a client.",
+      "Http request examination using Postman.",
+      "Be able to incorporate back-end skills into a MERN project."
+    ]
+  },
+  {
+    "title": "other skills",
+    "order": "3",
+    "skillList": ["SQL", "Heroku", "Netlify", "GIT", "MERN Stack"],
+    "description": [
+      "Competent in SQL queries such as subqueries.",
+      "Deploy web applications via either Heroku or Netlify.",
+      "Http request examination using Postman.",
+      "Build a full-stack application using MERN tech stack."
+    ]
+  }
+]

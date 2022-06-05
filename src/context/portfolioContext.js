@@ -1,7 +1,10 @@
 import React, { useContext, useReducer } from "react";
 import reducer from "../reducers/portFolioReducer";
+import skillsData from "../assets/skills.json";
+
 const initialState = {
   isSidebarOpen: false,
+  skills: skillsData,
 };
 
 const PortfolioContext = React.createContext();

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Sarun_pic from "../assets/Sarun_pic.jpg";
+import resume from "../assets/sarun_resume_2022.pdf";
 const Intro = () => {
   return (
     <Wrapper>
@@ -9,7 +10,9 @@ const Intro = () => {
           <span>Hi there, I'm Sarun.</span>
           <span>I'm a web developer.</span>
         </div>
-        <button className="btn intro-btn">Download my CV</button>
+        <a href={resume} download>
+          <button className="btn intro-btn">Download my CV</button>
+        </a>
       </div>
       <div className="intro-right">
         <div className="img-container">
@@ -22,7 +25,7 @@ const Intro = () => {
 
 const Wrapper = styled.div`
   display: flex;
-  height: 77vh;
+  height: 100vh;
 
   /* margin-top: 6rem; */
   padding: 2rem;
@@ -60,6 +63,17 @@ const Wrapper = styled.div`
   }
   .intro-btn {
     animation: opac 3s ease-in-out 1;
+    font-family: var(--headingFont);
+    font-size: 1.25rem;
+    width: 15rem;
+    padding: 0.75rem;
+    background: var(--my-yellow);
+    color: black;
+    transition: var(--transition);
+  }
+  .intro-btn:hover {
+    background: var(--gold);
+    color: var(--baby-blue);
   }
   .intro-right {
     display: flex;

@@ -46,6 +46,9 @@ html {
   --green-dark: #0f5132;
   --my-blue:#001b9f;
   --my-yellow:#FAFA33;
+  --canary-yellow:#FFFF8F;
+  --gold:#FFD700;
+  --baby-blue:#89CFF0;
 
   /* fonts  */
   --headingFont: 'Poppins', Sans-Serif;
