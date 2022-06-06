@@ -1,16 +1,16 @@
 [
   {
-    "title": "front-end development",
+    "title": "front-end ",
     "order": "1",
     "skillList": ["HTML", "CSS", "JavaScript", "React", "Redux Toolkit"],
     "description": [
       "Integrate multiple front-end development tools and languages to build a handy front-end application.",
-      "Proficient in modern web development using React and state management tools such as Redux Toolkit.",
+      "Proficient in modern web development using React and state management tools such as Redux Toolkit and Context API.",
       "Be able to incorporate front-end skills into a MERN project."
     ]
   },
   {
-    "title": "back-end development",
+    "title": "back-end",
     "order": "2",
     "skillList": ["MongoDB", "Mongoose", "NodeJS", "Express", "Postman"],
     "description": [

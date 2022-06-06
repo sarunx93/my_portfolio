@@ -4,6 +4,7 @@ import { usePortfolioContext } from "../context/portfolioContext";
 import styled from "styled-components";
 import Sarun from "../assets/Sarun.png";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   const { openSidebar } = usePortfolioContext();
 
@@ -57,6 +58,7 @@ const Wrapper = styled.nav`
   box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
   /* background: #151b9f; */
   background: #001b9f;
+
   .logo {
     display: flex;
     align-items: center;
