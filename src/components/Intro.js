@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Sarun_pic from "../assets/Sarun_pic.jpg";
 import resume from "../assets/sarun_resume_2022.pdf";
+
 const Intro = () => {
   return (
     <Wrapper>
