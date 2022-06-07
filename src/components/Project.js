@@ -13,6 +13,7 @@ const Project = () => {
           return <ProjectCard {...project} key={i} />;
         })}
       </div>
+      <h2 className="more-proj-text">More projects coming...</h2>
     </Wrapper>
   );
 };
@@ -27,6 +28,10 @@ const Wrapper = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .more-proj-text {
+    text-align: center;
+    margin-top: 2rem;
   }
 `;
 
