@@ -7,10 +7,19 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { openSidebar } = usePortfolioContext();
+  const nav = useRef();
+  const [isSticky, setIsSticky] = useState(false);
+  const handleScroll = () => {
+    window.scrollY > 678 ? setIsSticky(true) : setIsSticky(false);
+  };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, [isSticky]);
+  console.log(isSticky);
   return (
-    <Wrapper>
-      <div className="nav-center">
+    <Wrapper ref={nav}>
+      <div className={isSticky ? "fixed-nav nav-center" : "nav-center"}>
         <button className="toggle-btn" onClick={openSidebar}>
           <FaAlignLeft />
         </button>
@@ -60,7 +69,12 @@ const Wrapper = styled.nav`
   box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.1);
   /* background: #151b9f; */
   background: #001b9f;
-
+  .fixed-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+  }
   .logo {
     display: flex;
     align-items: center;
@@ -70,9 +84,10 @@ const Wrapper = styled.nav`
   }
   .nav-center {
     display: flex;
-    width: 90vw;
+    width: 100vw;
     align-items: center;
     justify-content: space-between;
+    background: #001b9f;
   }
   .links-container,
   .social-icons {
@@ -102,6 +117,9 @@ const Wrapper = styled.nav`
     .links-container,
     .social-icons {
       display: none;
+    }
+    .nav-center {
+      padding: 0.75rem;
     }
   }
   @media (min-width: 992px) {

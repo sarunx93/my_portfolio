@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import Sarun_pic from "../assets/Sarun_pic.jpg";
 import resume from "../assets/sarun_resume_2022.pdf";
 
 const Intro = () => {
+  const intro = useRef();
+  const [introBottom, setIntroBottom] = useState(0);
+  useEffect(() => {
+    const bottomLocation = intro.current.getBoundingClientRect().bottom;
+    console.log(bottomLocation);
+  }, []);
+
   return (
-    <Wrapper>
+    <Wrapper ref={intro}>
       <div className="intro-left">
         <div className="intro-name">
           <span>Hi there, I'm Sarun.</span>
