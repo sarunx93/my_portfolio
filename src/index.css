@@ -160,7 +160,11 @@ ul {
   font-weight:bold;
   display: block;
   font-size:var(--heading-text);
-  
+}
+@media (max-width: 992px){
+  .title{
+    font-size:3rem;
+  }
 }
 .underline {
   height:0.5rem;

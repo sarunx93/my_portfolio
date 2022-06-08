@@ -36,7 +36,7 @@ const SkillsTab = () => {
           </div>
           {/* skills info */}
           <article className="skills-info">
-            <h3>{title}</h3>
+            <h3 className="skill-cat">{title}</h3>
             <div className="skills-container">
               {skillList.map((skill, i) => {
                 return <h5 key={i}>{skill}</h5>;
@@ -109,7 +109,7 @@ const Wrapper = styled.section`
   }
   .section-whole {
     display: grid;
-    /* place-items:center; */
+    /* place-items: center; */
     grid-template-columns: 70% 30%;
   }
   .img-container {
@@ -132,6 +132,25 @@ const Wrapper = styled.section`
     .skills-center {
       transform: translateX(0);
       align-items: center;
+    }
+    .underline {
+      width: 7rem;
+      margin: 0 auto;
+    }
+    .skill-btn {
+      margin-bottom: 0.75rem;
+    }
+    .skill-cat {
+      font-size: 1.4rem;
+      text-decoration: underline;
+    }
+    .skills-container {
+      display: block;
+      text-align: center;
+    }
+    .section-whole {
+      grid-template-columns: 1fr;
+      place-items: center;
     }
   }
 `;

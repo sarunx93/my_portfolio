@@ -36,7 +36,7 @@ const ContactForm = () => {
   };
   return (
     <>
-      <h1 className="title">Contact</h1>
+      <h1 className="title title-contact">Contact</h1>
       <div className="underline"></div>
       <Wrapper>
         <div className="left-side">
@@ -125,6 +125,15 @@ const Wrapper = styled.div`
   .submit-btn:hover {
     background: var(--gold);
     color: var(--grey-800);
+  }
+  @media (max-width: 992px) {
+    .left-side {
+      display: none;
+    }
+    .right-side {
+      margin-top: 5rem;
+      margin-bottom: 3.5rem;
+    }
   }
 `;
 export default ContactForm;

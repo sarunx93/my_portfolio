@@ -36,6 +36,16 @@ const Wrapper = styled.div`
     text-align: center;
     margin-top: 2rem;
   }
+  @media (max-width: 992px) {
+    .title {
+      font-size: 3.5rem;
+    }
+    .project-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 `;
 
 export default Project;

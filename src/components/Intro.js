@@ -5,11 +5,6 @@ import resume from "../assets/sarun_resume_2022.pdf";
 
 const Intro = () => {
   const intro = useRef();
-  const [introBottom, setIntroBottom] = useState(0);
-  useEffect(() => {
-    const bottomLocation = intro.current.getBoundingClientRect().bottom;
-    console.log(bottomLocation);
-  }, []);
 
   return (
     <Wrapper ref={intro}>

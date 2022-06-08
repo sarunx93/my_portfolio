@@ -13,17 +13,23 @@ const Sidebar = () => {
         className={`${isSidebarOpen ? "sidebar show-sidebar" : "sidebar"}`}
       >
         <div className="sidebar-header">
-          <img src={Sarun} className="logo" />
+          <Link to="/">
+            <img src={Sarun} className="logo" onClick={closeSidebar} />
+          </Link>
           <button className="close-btn" onClick={closeSidebar}>
             <FaTimes />
           </button>
         </div>
         <div className="links-container">
           <Link to="/about-me">
-            <h3 className="link-text">about me</h3>
+            <h3 className="link-text" onClick={closeSidebar}>
+              about me
+            </h3>
           </Link>
           <Link to="/projects">
-            <h3 className="link-text">projects</h3>
+            <h3 className="link-text" onClick={closeSidebar}>
+              projects
+            </h3>
           </Link>
         </div>
         <ul className="social-icons">

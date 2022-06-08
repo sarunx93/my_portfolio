@@ -16,14 +16,14 @@ const Navbar = () => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
   }, [isSticky]);
-  console.log(isSticky);
+
   return (
     <Wrapper ref={nav}>
       <div className={isSticky ? "fixed-nav nav-center" : "nav-center"}>
         <button className="toggle-btn" onClick={openSidebar}>
           <FaAlignLeft />
         </button>
-        <div>
+        <div className="logo-container">
           <Link to="/">
             <img src={Sarun} className="logo" />
           </Link>
@@ -82,6 +82,9 @@ const Wrapper = styled.nav`
     box-shadow: 0 1px 0px rgba(0, 0, 0, 0.1);
     cursor: pointer;
   }
+  .logo-container {
+    padding-left: 2rem;
+  }
   .nav-center {
     display: flex;
     width: 100vw;
@@ -101,6 +104,12 @@ const Wrapper = styled.nav`
   .link-text,
   .socials {
     color: white;
+    transition: var(--transition);
+  }
+  .link-text:hover,
+  .socials:hover {
+    color: var(--my-yellow);
+    transform: scale(1.1);
   }
   .socials {
     font-size: 2rem;
@@ -120,6 +129,9 @@ const Wrapper = styled.nav`
     }
     .nav-center {
       padding: 0.75rem;
+    }
+    .logo {
+      display: none;
     }
   }
   @media (min-width: 992px) {

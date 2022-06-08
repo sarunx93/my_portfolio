@@ -6,7 +6,7 @@ const thisYear = new Date().getFullYear();
 const Footer = () => {
   return (
     <Wrapper>
-      <h4 className="footer-text">Get in touch</h4>
+      <h4 className="footer-text">Follow me on</h4>
 
       <ul className="social-icons">
         <li>
@@ -66,6 +66,7 @@ const Wrapper = styled.footer`
   }
   .copyright-text {
     color: var(--canary-yellow);
+    text-align: center;
   }
 `;
 

@@ -16,12 +16,20 @@ const ProjectCard = ({
           <img src={projectImg} className="img project-img" />
         </div>
         <h4 className="title-text">{title}</h4>
-        {shortDesc.map((desc) => {
-          return <p className="desc-text">{desc}</p>;
+        {shortDesc.map((desc, i) => {
+          return (
+            <p className="desc-text" key={i}>
+              {desc}
+            </p>
+          );
         })}
         <div className="lang-icon-container">
-          {icons.map((icon) => {
-            return <span className="lang-icon">{icon}</span>;
+          {icons.map((icon, i) => {
+            return (
+              <span className="lang-icon" key={i}>
+                {icon}
+              </span>
+            );
           })}
         </div>
       </div>
@@ -51,6 +59,7 @@ const Wrapper = styled.div`
   border-radius: 3%;
   transition: var(--transition);
   background: white;
+
   &:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-5);
@@ -111,6 +120,10 @@ const Wrapper = styled.div`
   .lang-icon {
     font-size: 1.75rem;
     color: var(--my-blue);
+  }
+  @media (max-width: 992px) {
+    width: 16rem;
+    margin-bottom: 1.5rem;
   }
 `;
 export default ProjectCard;
