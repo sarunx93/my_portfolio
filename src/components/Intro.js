@@ -10,6 +10,9 @@ const Intro = () => {
         <div className="intro-name">
           <span>Hi there, I'm Sarun.</span>
           <span>I'm a web developer.</span>
+          <p className="self-desc">
+            I enjoy building front-end apps <br /> and bringing data to life !!
+          </p>
         </div>
         <a href={resume} download>
           <button className="btn intro-btn">Download my CV</button>
@@ -74,7 +77,7 @@ const Wrapper = styled.div`
   }
   .intro-btn:hover {
     background: var(--gold);
-    color: var(--baby-blue);
+    color: var(--grey-800);
   }
   .intro-right {
     display: flex;
@@ -100,6 +103,11 @@ const Wrapper = styled.div`
   .sarun-pic {
     animation: opac 3s ease-in-out 1;
   }
+  .self-desc {
+    color: white;
+    animation: slideFromRight 3s ease-in-out 1;
+    font-size: 1.5rem;
+  }
   /* Animation */
   @keyframes slideFromLeft {
     0% {
@@ -108,6 +116,24 @@ const Wrapper = styled.div`
     }
     50% {
       transform: translateX(200px);
+      opacity: 0.5;
+    }
+    75% {
+      transform: translateX(50px);
+      opacity: 0.75;
+    }
+    100% {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+  }
+  @keyframes slideFromRight {
+    0% {
+      transform: translateX(500px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(-200px);
       opacity: 0.5;
     }
     75% {

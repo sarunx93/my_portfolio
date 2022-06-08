@@ -55,6 +55,7 @@ html {
   --bodyFont: 'Inter', Sans-Serif;
   --small-text: 0.875rem;
   --extra-small-text: 0.7em;
+  --heading-text: 5rem;
   /* rest of the vars */
   --backgroundColor: var(--grey-50);
   --textColor: var(--grey-900);
@@ -151,6 +152,22 @@ ul {
   width: 100%;
   display: block;
   object-fit: cover;
+}
+
+.title {
+  text-align: center;
+  color: var(--my-blue);
+  font-weight:bold;
+  display: block;
+  font-size:var(--heading-text);
+  
+}
+.underline {
+  height:0.5rem;
+  width:15rem;
+  background: var(--baby-blue);
+  
+  margin:0 auto;
 }
 /* buttons */
 

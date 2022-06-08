@@ -8,6 +8,7 @@ const Project = () => {
   return (
     <Wrapper>
       <h1 className="title">Projects</h1>
+      <div className="underline"></div>
       <div className="project-container">
         {projects.map((project, i) => {
           return <ProjectCard {...project} key={i} />;
@@ -20,6 +21,8 @@ const Project = () => {
 
 const Wrapper = styled.div`
   padding: 5rem;
+  background: var(--grey-100);
+  margin-bottom: 4rem;
   .title {
     align-items: center;
   }

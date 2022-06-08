@@ -14,7 +14,8 @@ const SkillsTab = () => {
   return (
     <Wrapper>
       <div className="title">
-        <h2 className="head">Skills</h2>
+        <h2 className="title">Skills</h2>
+        <div className="underline"></div>
       </div>
       <div className="section-whole">
         <div className="skills-center">
@@ -120,6 +121,9 @@ const Wrapper = styled.section`
   }
   .skills-pic {
     box-shadow: var(--shadow-2);
+  }
+  .section-whole {
+    margin-top: 3.5rem;
   }
   @media (max-width: 992px) {
     .img-container {

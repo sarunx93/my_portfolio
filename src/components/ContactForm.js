@@ -26,7 +26,7 @@ const ContactForm = () => {
           name.current.value = "";
           email.current.value = "";
           message.current.value = "";
-          //   form.reset();
+
           setTimeout(() => setDone(false), 2000);
         },
         (error) => {
@@ -35,45 +35,53 @@ const ContactForm = () => {
       );
   };
   return (
-    <Wrapper>
-      <div className="left-side">
-        <div className="contact-msg">
-          <h2>Let's talk</h2>
-          <h2>Contact me</h2>
+    <>
+      <h1 className="title">Contact</h1>
+      <div className="underline"></div>
+      <Wrapper>
+        <div className="left-side">
+          <div className="contact-msg">
+            <h2>Let's talk</h2>
+            <h2>Contact me</h2>
+          </div>
         </div>
-      </div>
-      <div className="right-side">
-        <form ref={form} onSubmit={sendEmail}>
-          <input
-            type="text"
-            name="user_name"
-            className="input-field"
-            placeholder="Name"
-            ref={name}
-          />
-          <input
-            type="email"
-            name="user_email"
-            className="input-field"
-            placeholder="Email"
-            ref={email}
-          />
-          <textarea name="message" className="input-field" ref={message} />
-          <button type="submit">submit</button>
-          <span>{done && "Email Sent !!"}</span>
-        </form>
-      </div>
-    </Wrapper>
+        <div className="right-side">
+          <form ref={form} onSubmit={sendEmail}>
+            <input
+              type="text"
+              name="user_name"
+              className="input-field"
+              placeholder="Name"
+              ref={name}
+            />
+            <input
+              type="email"
+              name="user_email"
+              className="input-field"
+              placeholder="Email"
+              ref={email}
+            />
+            <textarea name="message" className="input-field" ref={message} />
+            <button type="submit" className="submit-btn btn">
+              submit
+            </button>
+            <span>{done && "Email Sent !!"}</span>
+          </form>
+        </div>
+      </Wrapper>
+    </>
   );
 };
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
+  gap: 20rem;
+  width: 100vw;
   height: 60vh;
+
   .left-side {
-    padding: 0 3rem 0 3rem;
+    /* padding: 0 3rem 0 3rem; */
   }
   .right-side {
     display: flex;
@@ -88,7 +96,7 @@ const Wrapper = styled.div`
   }
   .input-field {
     width: 20rem;
-    height: 2rem;
+    height: 3rem;
     padding: 0.3em;
     outline: none;
     border: 2px solid var(--orange);
@@ -96,7 +104,27 @@ const Wrapper = styled.div`
     font-size: 16px;
   }
   textarea {
-    height: 5rem !important;
+    height: 7rem !important;
+  }
+  .contact-msg > :nth-child(1) {
+    font-family: var(--headingFont);
+    font-weight: bold;
+    font-size: 4rem;
+    color: var(--my-blue);
+  }
+  .submit-btn {
+    animation: opac 3s ease-in-out 1;
+    font-family: var(--headingFont);
+    font-size: 1.25rem;
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--my-yellow);
+    color: black;
+    transition: var(--transition);
+  }
+  .submit-btn:hover {
+    background: var(--gold);
+    color: var(--grey-800);
   }
 `;
 export default ContactForm;
