@@ -36,7 +36,7 @@ const ProjectCard = ({
 
       <div className="icon-link">
         <a href={gitHubUrl} className="link" target="_blank">
-          <h6 className="link-detail">Soucrce Code and full details</h6>
+          <h6 className="link-detail">Source Code and full details</h6>
           <FaGithub className="icon" />
         </a>
       </div>
