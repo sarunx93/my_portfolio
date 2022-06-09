@@ -29,9 +29,31 @@ const AboutMe = () => {
           When I was doing my master in data science, I came across a web
           development subject and I got hooked with it right at the moment. The
           subject gave me a clear guide of what to do next, so I started taking
-          courese about web devlopment on Udemy, such as HTML, CSS, JS, React,
-          Node and Express, and MERN stack.
+          courses about web devlopment on Udemy, such as HTML, CSS, JS, React,
+          Node and Express, and MERN stack. I wholeheartedly know that this is
+          just the beginning.
         </p>
+        <h2 className="headline">How I grow as a developer</h2>
+        <p className="paragraph">
+          When I first started, 'building a full-stack application' did sound
+          completely alien and scary to me. It was even discouraging sometimes.
+          Then I realized that I should put this aside and start with the two
+          simplest things, HTML and CSS. Along my learning path, things became
+          less terrifying and more enjoyable as I took it step by step and now
+          the latest course that I finished was a MERN course. It may be a
+          little step but to be honest, this has given me a huge motivation to
+          go on.
+        </p>
+        <p className="paragraph">
+          However, I discovered some of my weaknesses along the way. It seems to
+          me that my process was quite slow since I was quite laid back
+          sometimes. That is when procrastination took over. So, if there is
+          something I want to fix, from now on, my learning process must be
+          quicker and more effective so that I can keep with the pace in tech
+          world.
+        </p>
+        <h4>Thanks for reading</h4>
+        <h5>Sarun Pornaruntham</h5>
       </div>
     </Wrapper>
   );
@@ -62,6 +84,13 @@ const Wrapper = styled.div`
   }
   .p-container {
     max-width: var(--max-width);
+  }
+  @media (max-width: 992px) {
+    display: block;
+    .heading-text,
+    .underline {
+      display: none;
+    }
   }
 `;
 export default AboutMe;
