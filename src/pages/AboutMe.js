@@ -87,9 +87,11 @@ const Wrapper = styled.div`
   }
   @media (max-width: 992px) {
     display: block;
-    .heading-text,
+    .heading-text {
+      margin-top: 3.5rem;
+    }
     .underline {
-      display: none;
+      margin-bottom: 4rem;
     }
   }
 `;

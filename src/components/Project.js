@@ -22,7 +22,7 @@ const Project = () => {
 const Wrapper = styled.div`
   padding: 5rem;
   background: var(--grey-100);
-  margin-bottom: 4rem;
+  /* margin-bottom: 4rem; */
   .title {
     align-items: center;
   }

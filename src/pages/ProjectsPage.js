@@ -4,13 +4,15 @@ import styled from "styled-components";
 const ProjectPage = () => {
   return (
     <Wrapper>
-      <Project />
+      <Project className="section" />
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
-  height: 100vh;
-  background: var(--grey-100);
+  height: 100%;
+  .section {
+    margin-bottom: 0;
+  }
 `;
 export default ProjectPage;
