@@ -62,7 +62,7 @@ const SkillsTab = () => {
 };
 
 const Wrapper = styled.section`
-  width: 90vw;
+  width: 100%;
   margin: 5rem auto;
   max-width: var(--max-width);
   padding: 5rem;

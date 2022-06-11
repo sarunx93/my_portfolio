@@ -124,6 +124,12 @@ const Wrapper = styled.div`
   @media (max-width: 992px) {
     width: 16rem;
     margin-bottom: 1.5rem;
+    .lang-icon-container {
+      display: none;
+    }
+    .desc-text {
+      display: none;
+    }
   }
 `;
 export default ProjectCard;
