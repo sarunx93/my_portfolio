@@ -1,6 +1,7 @@
 import { usePortfolioContext } from "../context/portfolioContext";
 import ProjectCard from "./ProjectCard";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const Project = () => {
   const { projects } = usePortfolioContext();
@@ -10,9 +11,14 @@ const Project = () => {
       <h1 className="title">Projects</h1>
       <div className="underline"></div>
       <div className="project-container">
-        {projects.map((project, i) => {
+        {projects.slice(0, 3).map((project, i) => {
           return <ProjectCard {...project} key={i} />;
         })}
+      </div>
+      <div className="btn-container">
+        <Link to="/projects">
+          <button className="skill-btn">See All Projects</button>
+        </Link>
       </div>
     </Wrapper>
   );
@@ -30,6 +36,12 @@ const Wrapper = styled.div`
     display: grid;
     place-items: center;
     grid-template-columns: repeat(3, 1fr);
+  }
+  .btn-container {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .skill-btn {
     border: none;

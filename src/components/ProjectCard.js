@@ -59,7 +59,7 @@ const Wrapper = styled.div`
   border-radius: 3%;
   transition: var(--transition);
   background: white;
-
+  margin-bottom: 2rem;
   &:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-5);
