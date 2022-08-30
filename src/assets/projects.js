@@ -2,6 +2,7 @@ import theseRImg from "./these_r_project.png";
 import carApiImg from "./car_api_project.png";
 import gameListImg from "./game_list_project.png";
 import bandPickerImg from "./band_picker.png";
+import soccerAppImg from "./the_soccer_app.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -12,6 +13,19 @@ import {
 import { SiExpress, SiMongodb } from "react-icons/si";
 
 const projects = [
+  {
+    title: "The Soccer App",
+    projectImg: soccerAppImg,
+    shortDesc: [
+      "A responsive web application with soccer data fetching from API.",
+      "Integration of Redux Toolkit, Material UI and Firebase.",
+      "Including various npm packages for best UX.",
+    ],
+    gitHubUrl: "https://github.com/sarunx93/soccer_app",
+    projectUrl: "https://the-soccer-app.netlify.app/",
+    projectType: "React",
+    icons: [<FaReact />],
+  },
   {
     title: "Band Picker",
     projectImg: bandPickerImg,
@@ -30,8 +44,8 @@ const projects = [
     projectImg: gameListImg,
     shortDesc: [
       "A React project that displays game data derived from Freetogame.com.",
-      "Heavy use of Context API, React Router Dom and LocalStorage",
-      "Includes functionalities like search, filtering and favourite game selecting.",
+      "Use of Context API, React Router Dom and LocalStorage",
+      "Includes functionalities like search and filtering ",
     ],
     gitHubUrl: "https://github.com/sarunx93/React-gamelist",
     projectUrl: "https://mygamelist-react.netlify.app/",

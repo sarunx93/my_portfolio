@@ -60,6 +60,7 @@ const Wrapper = styled.div`
   transition: var(--transition);
   background: white;
   margin-bottom: 2rem;
+
   &:hover {
     transform: scale(1.05);
     box-shadow: var(--shadow-5);
@@ -67,6 +68,7 @@ const Wrapper = styled.div`
   }
   .main {
     padding: 1rem;
+    height: 33rem;
   }
   .project-img {
     height: 10rem;
