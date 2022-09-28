@@ -132,6 +132,9 @@ const Wrapper = styled.div`
     .desc-text {
       display: none;
     }
+    .main {
+      height: 15rem;
+    }
   }
 `;
 export default ProjectCard;
