@@ -1,25 +1,29 @@
 import React,{useRef, useState} from 'react'
 import styled from 'styled-components'
+import { usePortfolioContext } from '../context/portfolioContext'
 
 
 const LoginForm = () => {
     const form = useRef()
     const email = useRef()
     const password = useRef()
-
-    const handleSubmit = (e)=>{
+   const { setUpUser, user, isLoggedIn } = usePortfolioContext()
+    const handleSubmit = async (e)=>{
         e.preventDefault()
+        await setUpUser()
         console.log({
             email: email.current.value,
             password: password.current.value
         })
     }
+    console.log(user)
+    console.log(isLoggedIn)
     return (
         <>
             <Header className='heading-title'>LoginForm</Header>
        
             <Wrapper>
-                <form action="" className='form-itself'>
+                <form action="" className='form-itself' onSubmit={handleSubmit}>
                     <label htmlFor="email">Email</label>
                     <input 
                         type="text"
@@ -36,7 +40,7 @@ const LoginForm = () => {
                         className='input-field'
                         ref={password} 
                     />
-                    <button onClick={handleSubmit}>
+                    <button type='submit'onClick={handleSubmit}>
                         Login
                     </button>
                 </form>
