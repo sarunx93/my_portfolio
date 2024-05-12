@@ -1,4 +1,4 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useEffect } from "react";
 import axios from "axios";
 import reducer from "../reducers/portFolioReducer";
 import skillsData from "../assets/skills.json";
@@ -9,15 +9,19 @@ import {
   SIDEBAR_OPEN,
   SIDEBAR_CLOSE,
   SET_UP_USER_BEGIN,
-  SET_UP_USER_SUCCESS
+  SET_UP_USER_SUCCESS,
+  SET_UP_USER_ERROR,
+  LOGOUT_USER,
+  GET_CURRENT_USER
 } from './types'
 
 
-const initialState = {
+export const initialState = {
   isSidebarOpen: false,
   skills: skillsData,
   projects: projectData,
-  user: null
+  user: null,
+  errorMsg: ''
 };
 
 
@@ -36,15 +40,16 @@ export const PortfolioProvider = ({ children }) => {
     dispatch({ type: SIDEBAR_CLOSE });
   };
 
-  const setUpUser = async ()=>{
+  const setUpUser = async (currentUser)=>{
     dispatch({type:SET_UP_USER_BEGIN})
+    const {email, password} = currentUser
 
     try {
       const { data } = await axios.post(
         `api/v1/user/login`,
         {
-          email: 'Alan3@gmail.com',
-          password: '123456'
+          email,
+          password
         }
       )
       const { user, isLoggedIn } = data
@@ -55,14 +60,31 @@ export const PortfolioProvider = ({ children }) => {
       
 
     } catch (error) {
+      console.log(error)
+      dispatch({
+        type: SET_UP_USER_ERROR,
+        payload:{ errorMsg: error.message }
+      })
       console.error(error)
     }
   }
 
+  const logoutUser = async ()=>{
+    await axios.get(`api/v1/user/logout`)
+    dispatch({type:LOGOUT_USER})
+  }
+  
+  const getCurrentUser = async()=>{
+    const {data} = await axios.get(`api/v1/user/get-current-user`)
+    dispatch({type: GET_CURRENT_USER, payload:data.user})
+  }
+
+
+
 
 
   return (
-    <PortfolioContext.Provider value={{ ...state, openSidebar, closeSidebar, setUpUser }}>
+    <PortfolioContext.Provider value={{ ...state, openSidebar, closeSidebar, setUpUser, logoutUser, getCurrentUser }}>
       {children}
     </PortfolioContext.Provider>
   );

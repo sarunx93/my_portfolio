@@ -1,29 +1,39 @@
 import React,{useRef, useState} from 'react'
 import styled from 'styled-components'
 import { usePortfolioContext } from '../context/portfolioContext'
+import { useNavigate } from 'react-router-dom';
 
 
 const LoginForm = () => {
     const form = useRef()
     const email = useRef()
     const password = useRef()
-   const { setUpUser, user, isLoggedIn } = usePortfolioContext()
+    const navigate = useNavigate()
+    const { setUpUser, user, isLoggedIn, logoutUser } = usePortfolioContext()
+    
     const handleSubmit = async (e)=>{
         e.preventDefault()
-        await setUpUser()
-        console.log({
-            email: email.current.value,
+        await setUpUser({
+            email:email.current.value,  
             password: password.current.value
         })
+        
     }
+    
+    const handleLogout = async ()=>{
+        await logoutUser()
+        navigate('/')
+    }
+    
     console.log(user)
-    console.log(isLoggedIn)
+
+
     return (
         <>
             <Header className='heading-title'>LoginForm</Header>
        
             <Wrapper>
-                <form action="" className='form-itself' onSubmit={handleSubmit}>
+               { !user && <form action="" className='form-itself' onSubmit={handleSubmit}>
                     <label htmlFor="email">Email</label>
                     <input 
                         type="text"
@@ -43,7 +53,14 @@ const LoginForm = () => {
                     <button type='submit'onClick={handleSubmit}>
                         Login
                     </button>
-                </form>
+                </form>}
+                {
+                    user && 
+                    <>
+                        <h1>User is logged in.</h1>
+                        <button onClick={handleLogout}>logout</button>
+                    </>
+                }
             </Wrapper>
             
             
